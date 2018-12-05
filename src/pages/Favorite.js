@@ -27,7 +27,7 @@ export default class Favorite extends Component {
   }
 
   fetchFavorites = async () => {
-    let favorites = JSON.parse(await AsyncStorage.getItem('@prefire:favorites'))
+    let favorites = JSON.parse(await AsyncStorage.getItem('@prefire:favorites')) || []
 
     this.setState({ favorites })
   }

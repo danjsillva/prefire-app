@@ -32,7 +32,7 @@ export default class Home extends Component {
     featured: [],
     today: [],
     tomorow: [],
-    favorites: '',
+    favorites: [],
     liveVisible: true,
     featuredVisible: true,
     todayVisible: true,
@@ -59,27 +59,28 @@ export default class Home extends Component {
   }
 
   fetchFavorite = async () => {
-    let favorites = JSON.parse(await AsyncStorage.getItem('@prefire:favorites'))
+    let favorites = JSON.parse(await AsyncStorage.getItem('@prefire:favorites')) || []
 
     this.setState({ favorites })
   }
 
   fetchMatches = async () => {
     try {
-      // let response = await axios.get('http://localhost:3000/matches')
       let response = await axios.get('http://40.84.238.68:5555/matches')
       let { live, today, tomorow } = response.data
 
       this.setState({ live, today, tomorow })
 
-      let featured = [
-        ...today.filter(item => this.state.favorites.indexOf(item.team1.name) > -1 || this.state.favorites.indexOf(item.team2.name) > -1),
-        ...tomorow.filter(item => this.state.favorites.indexOf(item.team1.name) > -1 || this.state.favorites.indexOf(item.team2.name) > -1)
-      ]
-
-      this.setState({ featured })
+      if (this.state.favorites.length > 0) {
+        let featured = [
+          ...today.filter(item => this.state.favorites.indexOf(item.team1.name) > -1 || this.state.favorites.indexOf(item.team2.name) > -1),
+          ...tomorow.filter(item => this.state.favorites.indexOf(item.team1.name) > -1 || this.state.favorites.indexOf(item.team2.name) > -1)
+        ]
+  
+        this.setState({ featured })
+      }
     } catch (error) {
-      alert('Erro. Tente novamente!')
+      alert('Ops! Algo deu errado. Tente novamente!')
     }
   }
 
