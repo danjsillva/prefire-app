@@ -22,7 +22,9 @@ export default class Match extends React.Component {
                 <Text style={styles.teamName}>{this.props.data.team1.name}</Text>
               </View>
 
-              <Text> x </Text>
+              {this.props.data.result ? 
+              <Text style={styles.result}> {this.props.data.result} </Text> :
+              <Text> x </Text> }
 
               <View style={styles.team}>
                 <Text style={styles.teamName}>{this.props.data.team2.name}</Text>
@@ -73,6 +75,11 @@ const styles = StyleSheet.create({
   },
   team: {
     flexDirection: 'row'
+  },
+  result: {
+    fontSize: 16,
+    color: '#777',
+    fontWeight: 'bold',
   },
   teamName: {
     fontSize: 16,
