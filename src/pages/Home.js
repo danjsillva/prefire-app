@@ -40,6 +40,7 @@ export default class Home extends Component {
     featuredVisible: true,
     todayVisible: true,
     tomorowVisible: true,
+    featuredresultsVisible: true,
     resultsVisible: true,
     refreshing: false,
     update: '',
@@ -236,13 +237,13 @@ export default class Home extends Component {
                 />
               }>
               <View>
-                <TouchableOpacity onPress={() => this.setState({ resultsVisible: !this.state.resultsVisible })} style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'flex-start', margin: 10 }}>
+                <TouchableOpacity onPress={() => this.setState({ featuredresultsVisible: !this.state.featuredresultsVisible })} style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'flex-start', margin: 10 }}>
                   <Text style={[styles.listTitle]}>Destaques</Text>
                   <Text style={[styles.listUpdate]}>{this.state.update}</Text>
-                  {/* {this.state.resultsVisible ? <Icon name="angle-up" size={30} color={'#fff'} /> : <Icon name="angle-down" size={30} color={'#fff'} />} */}
+                  {/* {this.state.featuredresultsVisible ? <Icon name="angle-up" size={30} color={'#fff'} /> : <Icon name="angle-down" size={30} color={'#fff'} />} */}
                 </TouchableOpacity>
                 <ScrollView>
-                  {this.state.resultsVisible ?
+                  {this.state.featuredresultsVisible ?
                     this.state.featuredResults.length > 0 ?
                       <FlatList
                         horizontal
@@ -276,7 +277,7 @@ export default class Home extends Component {
               }
 
               <Footer />
-              
+
             </ScrollView>
           </View>
         </Swiper>

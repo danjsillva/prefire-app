@@ -23,7 +23,7 @@ export default class Live extends Component {
                 <Text style={styles.teamName}>{this.props.data.team1.name}</Text>
               </View>
 
-              <Text> x </Text>
+              <Text style={styles.result}> x </Text>
 
               <View style={styles.team}>
                 <Text style={styles.teamName}>{this.props.data.team2.name}</Text>
@@ -70,6 +70,11 @@ const styles = StyleSheet.create({
   team: {
     flexDirection: 'row',
     justifyContent: 'space-between',
+  },
+  result: {
+    fontSize: 16,
+    color: '#000',
+    fontWeight: 'bold',
   },
   teamName: {
     fontSize: 16,

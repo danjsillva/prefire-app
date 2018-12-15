@@ -7,7 +7,8 @@ export default class Match extends Component {
   render() {
     if (this.props.data.team1 && this.props.data.team2 && this.props.data.event) {
       return (
-        <LinearGradient colors={['#FF8008', '#FFC837']} start={{ x: 0, y: 1 }} end={{ x: 1, y: 0 }} style={styles.card}>
+        <LinearGradient colors={['#182848', '#4b6cb7']} start={{ x: 0, y: 1 }} end={{ x: 1, y: 0 }} style={styles.card}>
+        {/* <LinearGradient colors={['#FF8008', '#FFC837']} start={{ x: 0, y: 1 }} end={{ x: 1, y: 0 }} style={styles.card}> */}
         {/* <LinearGradient colors={['#fe8c00', '#f83600']} style={styles.card}> */}
           <View style={styles.content}>
             <Text style={styles.date}>{moment(this.props.data.date).fromNow().toUpperCase()}</Text>
@@ -27,7 +28,7 @@ export default class Match extends Component {
 
               {this.props.data.result ? 
               <Text style={styles.result}> {this.props.data.result} </Text> :
-              <Text style={{ color: '#fff' }}> x </Text> }
+              <Text style={[styles.result, { color: '#fff' }]}> x </Text> }
 
               <View style={styles.team}>
                 <Text style={styles.teamName}>{this.props.data.team2.name}</Text>

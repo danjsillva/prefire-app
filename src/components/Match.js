@@ -11,7 +11,7 @@ export default class Match extends React.Component {
           <View style={styles.line}></View>
 
           <View style={styles.info}>
-            <Text style={styles.date}>{moment(this.props.data.date).format('HH:mm')}</Text>
+            <Text style={styles.date}>{this.props.data.result ? moment(this.props.data.date).fromNow() : moment(this.props.data.date).format('HH:mm')}</Text>
 
             <View style={styles.content}>
               <View style={styles.team}>
@@ -24,7 +24,7 @@ export default class Match extends React.Component {
 
               {this.props.data.result ? 
               <Text style={styles.result}> {this.props.data.result} </Text> :
-              <Text> x </Text> }
+              <Text style={styles.result}> x </Text> }
 
               <View style={styles.team}>
                 <Text style={styles.teamName}>{this.props.data.team2.name}</Text>
@@ -59,7 +59,8 @@ const styles = StyleSheet.create({
     width: 3,
     height: 70,
     borderRadius: 50,
-    backgroundColor: '#FF8008',
+    // backgroundColor: '#FF8008',
+    backgroundColor: '#182848',
   },
   content: {
     flexDirection: 'row',
@@ -70,15 +71,16 @@ const styles = StyleSheet.create({
   date: {
     fontSize: 12,
     fontWeight: 'bold',
-    color: '#FFC837',
     marginVertical: 3,
+    color: '#4b6cb7',
+    // color: '#FFC837',
   },
   team: {
     flexDirection: 'row'
   },
   result: {
     fontSize: 16,
-    color: '#777',
+    color: '#182848',
     fontWeight: 'bold',
   },
   teamName: {

@@ -57,7 +57,7 @@ export default class Favorite extends Component {
     return (
       <ScrollView style={styles.container}>
         <View>
-          <Text style={styles.listTitle}>Equipe favorita</Text>
+          <Text style={styles.listTitle}>Equipes favoritas</Text>
 
           <View style={styles.fieldGroup}>
             <TextInput
@@ -67,7 +67,7 @@ export default class Favorite extends Component {
             />
 
             <TouchableOpacity onPress={() => this.handlePressAdd()}>
-              <LinearGradient colors={['#FF8008', '#FFC837']} start={{ x: 0, y: 1 }} end={{ x: 1, y: 0 }} style={styles.button}>
+              <LinearGradient colors={['#182848', '#4b6cb7']} start={{ x: 0, y: 1 }} end={{ x: 1, y: 0 }} style={styles.button}>
               <Text style={[styles.buttonText]}>ADICIONAR</Text>
               </LinearGradient>
             </TouchableOpacity>
