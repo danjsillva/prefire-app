@@ -7,12 +7,12 @@ import axios from 'axios'
 import moment from 'moment'
 import 'moment/locale/pt-br.js'
 
-// import {
-//   AdMobBanner,
-//   AdMobInterstitial,
-//   PublisherBanner,
-//   AdMobRewarded,
-// } from 'react-native-admob'
+import {
+  AdMobBanner,
+  AdMobInterstitial,
+  PublisherBanner,
+  AdMobRewarded,
+} from 'react-native-admob'
 
 import Footer from '../components/Footer'
 import Empt from '../components/Empt'
@@ -132,12 +132,6 @@ export default class Home extends Component {
       <SafeAreaView style={styles.container}>
         <Swiper loop={false} showsPagination={false}>
           <View>
-            {/* <AdMobBanner
-          adSize="fullBanner"
-          adUnitID="ca-app-pub-8531805358090283~3139561288"
-          testDevices={[AdMobBanner.simulatorId]}
-          onAdFailedToLoad={error => console.error(error)}
-        /> */}
 
             <ScrollView
               refreshControl={
@@ -281,6 +275,14 @@ export default class Home extends Component {
             </ScrollView>
           </View>
         </Swiper>
+
+        {/* <AdMobBanner
+          adSize="fullBanner"
+          adUnitID="ca-app-pub-8531805358090283/9442079903"
+          // adUnitID="ca-app-pub-3940256099942544/2934735716"
+          testDevices={[AdMobBanner.simulatorId]}
+          onAdFailedToLoad={error => console.error(error)}
+        /> */}
       </SafeAreaView>
     );
   }
