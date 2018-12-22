@@ -151,6 +151,7 @@ export default class Home extends Component {
                     this.state.live.length > 0 ?
                       <FlatList
                         horizontal
+                        showsHorizontalScrollIndicator={false}
                         contentContainerStyle={styles.listLive}
                         data={this.state.live}
                         keyExtractor={item => item.id.toString()}
@@ -172,6 +173,7 @@ export default class Home extends Component {
                     this.state.featured.length > 0 ?
                       <FlatList
                         horizontal
+                        showsHorizontalScrollIndicator={false}
                         contentContainerStyle={styles.listLive}
                         data={this.state.featured}
                         keyExtractor={item => item.id.toString()}
@@ -241,6 +243,7 @@ export default class Home extends Component {
                     this.state.featuredResults.length > 0 ?
                       <FlatList
                         horizontal
+                        showsHorizontalScrollIndicator={false}
                         contentContainerStyle={styles.listLive}
                         data={this.state.featuredResults}
                         keyExtractor={item => item.id.toString()}
